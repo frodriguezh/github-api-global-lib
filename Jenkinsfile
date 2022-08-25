@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Final stage'){
       steps {
-        echo scm.branches[0].name
+        echo scm.branches[0].name.split("/")[1]
       }
     }
   }
