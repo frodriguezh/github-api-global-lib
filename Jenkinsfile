@@ -1,5 +1,5 @@
-def BRANCH = scm.branches[0].name.split("/")[1]
-@Library("shared-library@dev") _
+def BRANCH_NAME = scm.branches[0].name.split("/")[1]
+@Library("shared-library@$BRANCH_NAME") _
 pipeline {
   agent any
   stages {
@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Final stage'){
       steps {
-        echo $BRANCH
+        echo $BRANCH_NAME
       }
     }
   }
