@@ -1,4 +1,4 @@
-properties([parameters([string(name: 'LIB_VERSION', defaultValue: 'master')])])
+properties([parameters([string(name: 'LIB_VERSION', defaultValue: 'dev')])])
 library "shared-library@${params.LIB_VERSION}"
 
 pipeline {
