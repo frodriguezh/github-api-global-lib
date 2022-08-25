@@ -1,5 +1,6 @@
-def $BRANCH_NAME = scm.branches[0].name.split("/")[1]
-@Library("shared-library@dev") _
+properties([parameters([string(name: 'LIB_VERSION', defaultValue: 'master')])])
+library "shared-library@${params.LIB_VERSION}"
+
 pipeline {
   agent any
   stages {
