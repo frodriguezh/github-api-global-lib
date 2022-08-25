@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Final stage'){
       steps {
-        echo ${BRANCH_NAME}
+        echo "${BRANCH_NAME}"?
       }
     }
   }
