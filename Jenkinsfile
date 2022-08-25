@@ -9,10 +9,5 @@ pipeline {
         helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
       }
     }
-    stage('Final stage'){
-      steps {
-        echo $BRANCH_NAME
-      }
-    }
   }
 }
