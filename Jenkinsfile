@@ -9,8 +9,7 @@ pipeline {
     }
     stage('Final stage'){
       steps {
-        echo "${env.BRANCH_NAME}"
-        checkout scm
+        echo scm.branches[0].name
       }
     }
   }
