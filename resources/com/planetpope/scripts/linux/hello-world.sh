@@ -1,2 +1,2 @@
 #!/bin/bash
-echo Hello $1. Today is $2.
+echo Hola $1. Hoy es $2.
