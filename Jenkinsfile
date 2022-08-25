@@ -7,5 +7,10 @@ pipeline {
         helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
       }
     }
+    stage(){
+      steps {
+        echo ${BRANCH_NAME}
+      }
+    }
   }
 }
