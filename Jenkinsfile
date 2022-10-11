@@ -11,7 +11,7 @@ pipeline {
         println "${URL_SERVER}"
         //helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
         getEnv(branchTarget: "production")
-        println "${URL_SERVER}"
+        println "${env.URL_SERVER}"
       }
     }
   }
