@@ -1,4 +1,7 @@
-import groovy.*
+import groovy.yaml.YamlSlurper
+import groovy.io.FileType
+import java.io.File
+import groovy.yaml.YamlBuilder
 
 def configYaml = '''\
 ---
