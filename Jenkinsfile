@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('Even Stage') {
       steps {
+        println "${URL_SERVER}"
         //helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
         getEnv(branchTarget: "production")
       }
