@@ -1,4 +1,4 @@
-import groovy.yaml.YamlSlurper
+import groovy.*
 
 def configYaml = '''\
 ---
