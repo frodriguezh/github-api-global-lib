@@ -1,3 +1,5 @@
+import groovy.yaml.YamlSlurper
+
 def call (){
   
     def exampleYaml = '''\
