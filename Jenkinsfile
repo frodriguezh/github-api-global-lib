@@ -10,5 +10,10 @@ pipeline {
         println "${env.URL_SERVER}"
       }
     }
+    stage('Even Stage DOS') {
+      steps {
+        println "${env.ID_SECRET}"
+      }
+    }
   }
 }
