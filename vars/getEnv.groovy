@@ -1,6 +1,8 @@
 
 def call(){
  
+ import groovy.yaml.YamlSlurper
+ 
  def datas = readYaml text: """
 something: 'my datas'
 size: 3
