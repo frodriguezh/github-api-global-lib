@@ -4,7 +4,8 @@ pipeline {
   stages {
     stage('Even Stage') {
       steps {
-        helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
+        //helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
+        getEnv()
       }
     }
   }
