@@ -1,9 +1,10 @@
-def call(String branchTarget){
+def call(Map config = [:]){
  
  def data = readYaml file: "resources/com/planetpope/envconfig.yaml"
 
- println "data.environment.${branchTarget}.urlserver"
- println "data.environment.${branchTarget}.idsecret"
+ println config.branchTarget
+ println data.environment.development.urlserver
+ println "data.environment.development.idsecret
  
 }
 
