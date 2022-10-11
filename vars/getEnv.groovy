@@ -2,7 +2,11 @@
     
 import org.yaml.snakeyaml.Yaml
 
+def call(){
+
 Yaml parser = new Yaml()
 List example = parser.load(("example.yaml" as File).text)
 
 example.each{println it.subject}
+ 
+}
