@@ -1,5 +1,4 @@
-import groovy.yaml.YamlSlurper
-    
+  
     def exampleYaml = '''\
     ---
     - subject: "maths"
