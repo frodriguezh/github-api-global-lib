@@ -4,7 +4,7 @@ def call(Map config = [:]){
 
  println config.branchTarget
  println data.environment.development.urlserver
- println "data.environment.development.idsecret
+ println data.environment.development.idsecret
  
 }
 
