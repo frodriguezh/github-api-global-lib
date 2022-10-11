@@ -1,0 +1,10 @@
+environment:
+  development:
+    urlserver: wngplgmaappwd00.itauchile.cl
+    idsecret: gema/dev
+  quality:
+    urlserver: wngplgmaappwq00.itauchile.cl
+    idsecret: gema/qa
+  production:
+    urlserver: wngplgmaappwp00.itauchile.cl
+    idsecret: gema/prod
