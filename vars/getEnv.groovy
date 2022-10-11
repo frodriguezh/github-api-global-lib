@@ -1,17 +1,8 @@
-import groovy.yaml.YamlSlurper
-
 def call(){
  
+ def datas = readYaml file: "com/planetpope/envconfig.yaml"
 
- 
- def datas = readYaml text: """
-something: 'my datas'
-size: 3
-isEmpty: false
-"""
- println datas.something
- println datas.size
- println datas.isEmpty
- 
+ println datas.environment
+
 }
 
