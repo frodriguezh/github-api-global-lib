@@ -1,3 +1,6 @@
+import groovy.yaml.YamlSlurper
+
+def call (){
   
     def exampleYaml = '''\
     ---
@@ -10,3 +13,4 @@
 //    List example = new YamlSlurper().parse("example.yaml" as File)
     
     example.each{println it.subject}
+}
