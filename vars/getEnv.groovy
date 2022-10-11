@@ -1,8 +1,9 @@
 def call(){
  
- def datas = readYaml file: "resources/com/planetpope/envconfig.yaml"
+ def data = readYaml file: "resources/com/planetpope/envconfig.yaml"
 
- println datas.environment
-
+ println data.environment.development.urlserver
+ println data.environment.development.idsecret
+ 
 }
 
