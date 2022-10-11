@@ -1,25 +1,8 @@
-import groovy.yaml.YamlSlurper
-import groovy.io.FileType
-import java.io.File
-import groovy.yaml.YamlBuilder
+ @Grab('org.yaml:snakeyaml:1.17')
+    
+import org.yaml.snakeyaml.Yaml
 
-def configYaml = '''\
----
-application: "Sample App"
-users:
-- name: "mrhaki"
-  likes:
-  - Groovy
-  - Clojure
-  - Java
-- name: "Hubert"
-  likes:
-  - Apples
-  - Bananas
-connections:
-- "WS1"
-- "WS2"
-'''
+Yaml parser = new Yaml()
+List example = parser.load(("example.yaml" as File).text)
 
-// Parse the YAML.
-def config = new YamlSlurper().parseText(configYaml)
+example.each{println it.subject}
