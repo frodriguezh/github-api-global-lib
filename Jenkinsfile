@@ -1,7 +1,5 @@
 @Library("libreriacompartida") _
 
-import groovy.yaml.YamlSlurper
-
 pipeline {
   agent any
   stages {
