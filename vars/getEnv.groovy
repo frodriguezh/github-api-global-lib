@@ -1,7 +1,8 @@
+import groovy.yaml.YamlSlurper
 
 def call(){
  
- import groovy.yaml.YamlSlurper
+
  
  def datas = readYaml text: """
 something: 'my datas'
