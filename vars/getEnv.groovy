@@ -6,6 +6,6 @@ def call(Map config = [:]){
  env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
  env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
  
- assert env.URL_SERVER == "wngplgmaappwd00.itauchile.cl" : "test failed"
+ assert env.URL_SERVER != "wngplgmaappwd00.itauchile.cl" : "test failed"
  
 }
