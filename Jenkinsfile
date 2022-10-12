@@ -7,13 +7,9 @@ pipeline {
       steps {
         //helloWorldExternal(name:"Fernando", dayOfWeek:"Jueves")
         getEnv(branchTarget: "development")
-        println "${env.URL_SERVER}"
+        //println "${env.URL_SERVER}"
       }
     }
-    stage('Even Stage DOS') {
-      steps {
-        println "${env.ID_SECRET}"
-      }
-    }
+ 
   }
 }
