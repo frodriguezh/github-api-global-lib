@@ -1,6 +1,6 @@
 def call(Map config = [:]){
  
- def envconfig = "resources/com/planetpope/envconfig.yaml"
+ def envconfig = "resources/como/planetpope/envconfig.yaml"
  
  def exists = fileExists envconfig
  if (exists) {
