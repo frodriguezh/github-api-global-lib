@@ -17,8 +17,12 @@ pipeline {
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
+                //! test -f ./Jenkinsfile && echo "No exists."
                  sh '''
-                    ! test -f ./Jenkinsfile && echo "No exists."
+                    if ! test -f "./Jenkinsfile"; then
+                        echo "$1 no exists."
+                        exit 1;
+                    fi
                  '''
                  //helloWorldExternal(name: "Jenkinsfile333")
                 //getSourceCode(repoUrl,repoBranchTarget)
