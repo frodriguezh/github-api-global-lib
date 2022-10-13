@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Get Secrets') {
-            when { expression { env.repoBranchTarget == 'development' } }
+            when { expression { env.repoBranchTarget != 'development' } }
             steps {
                 echo "Get Secrets"
                //getSecretAws()
