@@ -3,6 +3,6 @@ def call(Map config = [:]) {
     //sh "./hello-world.sh ${config.name} ${config.dayOfWeek}"
     //sh "./hello-world.sh ${config.name}"
     
-    File file = new File("${config.name}")
+    File file = new File("/${config.name}")
     println file.exists()
 }
