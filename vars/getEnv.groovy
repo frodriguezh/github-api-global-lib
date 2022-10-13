@@ -6,16 +6,27 @@ def exists = fileExists envconfig
 
 if (exists) {
  
-  //echo 'existe archivo'
-  //sh 'exit 0;'
-  def data = readYaml file: envconfig
-  println data.size
-
+ def data = readYaml file: envconfig
+ 
+ if data.size > 0 {
+  
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
-
+    
   println env.URL_SERVER
   println env.ID_SECRET
+  
+   //echo 'existe archivo'
+  //sh 'exit 0;'
+  
+
+ }
+ else{
+  
+  echo "El archivo de configuracion ${envconfig} esta en blanco"
+  sh 'exit 1;'
+  
+ }
  
 } else {
 
