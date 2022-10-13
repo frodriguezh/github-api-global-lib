@@ -16,7 +16,7 @@ if (exists) {
   println env.URL_SERVER
   println env.ID_SECRET
   
-  if (env.URL_SERVER.toString() == "" || env.ID_SECRET.toString() == ""){
+  if (env.URL_SERVER.toString() == "" || env.ID_SECRET.toString() == null){
    
      echo "El archivo de configuracion ${envconfig} no tiene datos para el ambiente data.environment.${config.branchTarget}"
      sh 'exit 1;'
