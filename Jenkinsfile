@@ -19,7 +19,7 @@ pipeline {
                 echo "Clonar Codigo"
                  sh '''
                     ls -l
-                    test -f /Jenkinsfile
+                    test Jenkinsfile
                  '''
                  //helloWorldExternal(name: "Jenkinsfile333")
                 //getSourceCode(repoUrl,repoBranchTarget)
