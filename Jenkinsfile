@@ -5,7 +5,7 @@ def repoBranchTarget = 'development'
 
 pipeline {
      agent {
-        docker { image 'netcorev6:latest' }
+        docker { image 'netcorev6:latest' label 'netcore'}
     }
     stages {
         stage('Get Env') {
