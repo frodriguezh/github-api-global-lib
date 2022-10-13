@@ -4,7 +4,7 @@ def call(Map config = [:]) {
     //sh "./hello-world.sh ${config.name}"
    //def dir = readFile("${WORKSPACE}/Jenkinsfile");
    //println fileExists dir
-   def exists = fileExists "${WORKSPACE}/Jenkinsfile333"
+   def exists = fileExists "${WORKSPACE}/${config.name}"
 
     if (exists) {
         echo 'Yes'
