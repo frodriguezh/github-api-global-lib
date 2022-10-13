@@ -18,8 +18,7 @@ pipeline {
             steps {
                 echo "Clonar Codigo"
                  sh '''
-                    ls -l
-                    test Jenkinsfile33
+                    test -f ./Jenkinsfile && echo "Jenkinsfile exists."
                  '''
                  //helloWorldExternal(name: "Jenkinsfile333")
                 //getSourceCode(repoUrl,repoBranchTarget)
