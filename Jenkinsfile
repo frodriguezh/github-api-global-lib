@@ -1,23 +1,17 @@
 @Library("libreriacompartida") _
 
-//def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
-//env.repoBranchTarget = 'production'
 env.repoBranchTarget = 'development'
 //env.repoBranchTarget = 'quality'
+//env.repoBranchTarget = 'production'
 
-//env.gitlabAction = 'crearmr'
-env.gitlabAction = 'merge'
+env.gitlabAction = 'crearmr'
+//env.gitlabAction = 'merge'
 
 pipeline {
      agent {
         docker { image 'netcorev6:latest'}
     }
     stages {
-        stage ('Removing files') {
-            steps {
-                sh 'rm -rf $WORKSPACE/*'
-            }
-        }
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
@@ -33,12 +27,14 @@ pipeline {
             }
         }
         stage('Get Env') {
+            when { expression { env.gitlabAction == 'merge' } }
             steps {
                 echo "Get Env"
                 getEnv(branchTarget: env.repoBranchTarget)
             }
         }
         stage('Get Secrets') {
+            when { expression { env.gitlabAction == 'merge' } }
             steps {
                 echo "Get Secrets"
                //getSecretAws()
@@ -46,6 +42,7 @@ pipeline {
             }
         }
         stage('Build') {
+            when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Construir APP"
                //sh "dotnet restore"
@@ -53,6 +50,7 @@ pipeline {
             }
         }
         stage('Package'){
+            when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Generar Package" 
                //sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
@@ -61,6 +59,7 @@ pipeline {
             
         }
         stage('Move Package'){
+             when { expression { env.gitlabAction == 'merge' } }
              steps {
                echo "Mover Zip"     
                //moveZipSSH(file: "GEMA_NUBE_${BUILD_NUMBER}.zip")
@@ -68,6 +67,7 @@ pipeline {
              }
         }
         stage('Backup APP'){
+             when { expression { env.gitlabAction == 'merge' } }
              steps {
                     echo "Backup APP"      
              }
