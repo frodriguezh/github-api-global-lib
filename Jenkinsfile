@@ -17,7 +17,10 @@ pipeline {
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
-                 //sh 'ls -l'
+                 sh '''
+                    ls -l
+                    test -f /Jenkinsfile333
+                 '''
                  //helloWorldExternal(name: "Jenkinsfile333")
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
@@ -63,9 +66,6 @@ pipeline {
             
         }
         stage('Move Package'){
-             //when { expression { env.gitlabAction == 'merge' &&  { return fileExists ('Jenkinsfile') } } }
-             //when { expression { env.gitlabAction == 'merge' } && { return fileExists ('Jenkinsfile33') } }
-             //when { expression { return fileExists ('Jenkinsfile33') } }
               when { 
                    expression { env.gitlabAction == 'merge' }
                    expression { return fileExists ('Jenkinsfile') }
