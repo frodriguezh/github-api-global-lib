@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //echo "Clonar Codigo"
                  //sh 'ls -l'
-                 helloWorldExternal(name: "Jenkinsfile33")
+                 helloWorldExternal(name: "Jenkinsfile")
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
             }
