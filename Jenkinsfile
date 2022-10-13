@@ -68,7 +68,7 @@ pipeline {
              //when { expression { return fileExists ('Jenkinsfile33') } }
               when { 
                    expression { env.gitlabAction == 'merge' }
-                   expression { return fileExists ('Jenkinsfile33') }
+                   expression { return fileExists ('Jenkinsfile') }
              }
              steps {
                echo "Mover Zip"     
