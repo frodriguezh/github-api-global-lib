@@ -1,14 +1,23 @@
 @Library("libreriacompartida") _
 
 //def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
-env.repoBranchTarget = 'production'
-env.gitlabAction = 'crearmr'
+//env.repoBranchTarget = 'production'
+env.repoBranchTarget = 'development'
+//env.repoBranchTarget = 'quality'
+
+//env.gitlabAction = 'crearmr'
+env.gitlabAction = 'merge'
 
 pipeline {
      agent {
         docker { image 'netcorev6:latest'}
     }
     stages {
+        stage ('Clear Workspace') {
+            steps {
+                sh 'rm -rf $WORKSPACE/*'
+            }
+        }
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
