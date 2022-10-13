@@ -23,10 +23,6 @@ if (exists) {
    println env.URL_SERVER
    println env.ID_SECRET
 
-    //echo 'existe archivo'
-   //sh 'exit 0;'
-  
-
  }
  else{
   
