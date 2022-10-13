@@ -1,7 +1,3 @@
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
-
 def call(Map config = [:]){
  
 def envconfig = "resources/com/planetpope/envconfig.yaml"
@@ -10,13 +6,9 @@ def exists = fileExists envconfig
 
 if (exists) {
  
- def lines = readFile.readFileInList(envconfig)
- 
- println lines.size()
- 
  def data = readYaml file: envconfig
  
- if (data.size > 0) {
+ if (datas?.environment) {
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
