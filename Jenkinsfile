@@ -64,7 +64,8 @@ pipeline {
         }
         stage('Move Package'){
              //when { expression { env.gitlabAction == 'merge' &&  { return fileExists ('Jenkinsfile') } } }
-              when { expression { env.gitlabAction == 'merge' } } && when { expression { return fileExists ('Jenkinsfile33') } }
+             when { expression { env.gitlabAction == 'merge' } && expression { return fileExists ('Jenkinsfile33') } }
+             //when { expression { return fileExists ('Jenkinsfile33') } }
              steps {
                echo "Mover Zip"     
                //moveZipSSH(file: "GEMA_NUBE_${BUILD_NUMBER}.zip")
