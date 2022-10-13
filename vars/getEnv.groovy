@@ -1,6 +1,8 @@
 def call(Map config = [:]){
  
- def exists = fileExists "resources/com/planetpope/envconfig.yaml"
+ def envconfig = "resources/com/planetpope/envconfig.yaml"
+ 
+ def exists = fileExists envconfig
  if (exists) {
        echo 'existe archivo'
        sh 'exit 0;'
