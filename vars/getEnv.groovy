@@ -8,6 +8,8 @@ if (exists) {
  
  def data = readYaml file: envconfig
  
+ println data.size
+ 
  if (data.size > 0) {
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
