@@ -1,7 +1,7 @@
 @Library("libreriacompartida") _
 
 //def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
-def env.repoBranchTarget = 'development'
+env.repoBranchTarget = 'development'
 
 pipeline {
      agent {
