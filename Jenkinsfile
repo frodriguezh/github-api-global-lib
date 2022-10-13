@@ -1,7 +1,7 @@
 @Library("libreriacompartida") _
 
 //def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
-env.repoBranchTarget = 'production'
+env.repoBranchTarget = 'development'
 
 pipeline {
      agent {
@@ -15,6 +15,9 @@ pipeline {
             }
         }
         stage('Get Secrets') {
+            when(env.repoBranchTarget == 'development') {
+                  echo 'Performing steps of stage Zero'
+            }
             steps {
                 echo "Get Secrets"
                //getSecretAws()
