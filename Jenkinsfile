@@ -14,7 +14,8 @@ pipeline {
     stages {
         stage('Download Code') {
             steps {
-                echo "Clonar Codigo"
+                //echo "Clonar Codigo"
+                 sh 'ls -l"
                  helloWorldExternal(name: "fernando.txt")
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
