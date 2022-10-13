@@ -17,8 +17,8 @@ pipeline {
         stage('Download Code') {
             steps {
                 //echo "Clonar Codigo"
-                 sh 'ls -l'
-                 helloWorldExternal(name: "Jenkinsfile333")
+                 //sh 'ls -l'
+                 //helloWorldExternal(name: "Jenkinsfile333")
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
             }
@@ -64,6 +64,7 @@ pipeline {
         }
         stage('Move Package'){
              when { expression { env.gitlabAction == 'merge' } }
+             when { expression { return fileExists ('Jenkinsfile333') } }
              steps {
                echo "Mover Zip"     
                //moveZipSSH(file: "GEMA_NUBE_${BUILD_NUMBER}.zip")
