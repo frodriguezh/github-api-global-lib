@@ -13,11 +13,6 @@ pipeline {
         docker { image 'netcorev6:latest'}
     }
     stages {
-        stage ('Clear Workspace') {
-            steps {
-                sh 'rm -rf $WORKSPACE/*'
-            }
-        }
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
