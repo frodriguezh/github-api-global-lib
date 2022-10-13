@@ -4,8 +4,8 @@ env.repoBranchTarget = 'development'
 //env.repoBranchTarget = 'quality'
 //env.repoBranchTarget = 'production'
 
-env.gitlabAction = 'crearmr'
-//env.gitlabAction = 'merge'
+//env.gitlabAction = 'crearmr'
+env.gitlabAction = 'merge'
 
 pipeline {
      agent {
