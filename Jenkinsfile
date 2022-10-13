@@ -17,7 +17,7 @@ pipeline {
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
-                helloWorldExternal(name: "Jenkinsfile333")
+                helloWorldExternal(name: "Jenkinsfile")
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
             }
