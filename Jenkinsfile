@@ -1,7 +1,7 @@
 @Library("libreriacompartida") _
 
 //def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
-def repoBranchTarget = 'development'
+def env.repoBranchTarget = 'development'
 
 pipeline {
      agent {
@@ -26,6 +26,12 @@ pipeline {
                 echo "Clonar Codigo"
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
+            }
+        }
+        stage('Test Code SonarQube') {
+            steps {
+               //echo "Test Code SonarQube"
+               sonarQubeTest()
             }
         }
         stage('Build') {
