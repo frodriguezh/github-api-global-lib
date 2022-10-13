@@ -12,18 +12,25 @@ if (exists) {
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
-    
-  println env.URL_SERVER
-  println env.ID_SECRET
   
-   //echo 'existe archivo'
-  //sh 'exit 0;'
+  if (env.URL_SERVER == null){
+   
+     echo "El archivo de configuracion ${envconfig} no tiene datos para el ambiente data.environment.${config.branchTarget}"
+     sh 'exit 1;'
+   
+  }
+   
+   println env.URL_SERVER
+   println env.ID_SECRET
+
+    //echo 'existe archivo'
+   //sh 'exit 0;'
   
 
  }
  else{
   
-  echo "El archivo de configuracion ${envconfig} esta en blanco"
+  echo "El archivo de configuracion ${envconfig} esta tiene ambientes declarados"
   sh 'exit 1;'
   
  }
