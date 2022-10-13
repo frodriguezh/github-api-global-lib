@@ -7,8 +7,8 @@ def call(Map config = [:]) {
    def exists = fileExists "${WORKSPACE}/${config.name}"
 
     if (exists) {
-        echo 'Yes'
+        exit 0;
     } else {
-        echo 'No'
+        exit 1;
     }
 }
