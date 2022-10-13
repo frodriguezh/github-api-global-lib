@@ -19,7 +19,7 @@ pipeline {
                 echo "Clonar Codigo"
                 //! test -f ./Jenkinsfile && echo "No exists."
                  sh '''
-                    if ! test -f "./Jenkinsfile"; then
+                    if ! test -f "./Jenkinsfile333"; then
                         echo "$1 no exists."
                         exit 1;
                     fi
