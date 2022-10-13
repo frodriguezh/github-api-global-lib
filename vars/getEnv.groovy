@@ -13,6 +13,9 @@ if (exists) {
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
   
+  println env.URL_SERVER
+  println env.ID_SECRET
+  
   if (env.URL_SERVER || env.ID_SECRET){
    
      echo "El archivo de configuracion ${envconfig} no tiene datos para el ambiente data.environment.${config.branchTarget}"
