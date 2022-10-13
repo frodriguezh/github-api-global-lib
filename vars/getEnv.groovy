@@ -10,7 +10,7 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert if(data.environment."${config.branchTarget}".urlserver) : "nulo"
+  assert (data.environment."${config.branchTarget}".urlserver) : "nulo"
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
