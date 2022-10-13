@@ -6,9 +6,9 @@ def exists = fileExists envconfig
 
 if (exists) {
  
- def noOfLines = readFile.readFileLineByLine(envconfig)
+ def lines = readFile.readFileInList(envconfig)
  
- println noOfLines.size()
+ println lines.size()
  
  def data = readYaml file: envconfig
  
