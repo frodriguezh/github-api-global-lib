@@ -67,7 +67,7 @@ pipeline {
              //when { expression { env.gitlabAction == 'merge' } && { return fileExists ('Jenkinsfile33') } }
              //when { expression { return fileExists ('Jenkinsfile33') } }
               when { 
-                   expression { env.gitlabAction == 'merge'
+                   expression { env.gitlabAction == 'merge' }
                    expression { return fileExists ('Jenkinsfile33') }
              }
              steps {
