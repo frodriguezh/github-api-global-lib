@@ -35,7 +35,7 @@ pipeline {
         stage('Get Env') {
             steps {
                 echo "Get Env"
-                //getEnv(branchTarget: repoBranchTarget)
+                getEnv(branchTarget: env.repoBranchTarget)
             }
         }
         stage('Get Secrets') {
