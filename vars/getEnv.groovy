@@ -13,7 +13,7 @@ if (exists) {
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
   
-  if (env.URL_SERVER == null){
+  if (!env.URL_SERVER){
    
      echo "El archivo de configuracion ${envconfig} no tiene datos para el ambiente data.environment.${config.branchTarget}"
      sh 'exit 1;'
