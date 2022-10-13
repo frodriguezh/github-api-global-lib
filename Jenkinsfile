@@ -2,26 +2,13 @@
 
 //def repoUrl = 'http://gitlab.itauchile.cl/gobierno-compartido/planificacion-financiera/gema-cloud-net-core.git'
 env.repoBranchTarget = 'development'
+env.gitlabAction = 'crearmr'
 
 pipeline {
      agent {
         docker { image 'netcorev6:latest'}
     }
     stages {
-        stage('Get Env') {
-            steps {
-                echo "Get Env"
-                //getEnv(branchTarget: repoBranchTarget)
-            }
-        }
-        stage('Get Secrets') {
-            when { expression { env.repoBranchTarget != 'development' } }
-            steps {
-                echo "Get Secrets"
-               //getSecretAws()
-          
-            }
-        }
         stage('Download Code') {
             steps {
                 echo "Clonar Codigo"
@@ -30,9 +17,23 @@ pipeline {
             }
         }
         stage('Test Code SonarQube') {
+            when { expression { env.repoBranchTarget == 'development' && env.gitlabAction == 'crearmr' } }
             steps {
                //echo "Test Code SonarQube"
                sonarQubeTest()
+            }
+        }
+        stage('Get Env') {
+            steps {
+                echo "Get Env"
+                //getEnv(branchTarget: repoBranchTarget)
+            }
+        }
+        stage('Get Secrets') {
+            steps {
+                echo "Get Secrets"
+               //getSecretAws()
+          
             }
         }
         stage('Build') {
