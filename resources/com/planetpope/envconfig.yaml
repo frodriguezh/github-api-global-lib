@@ -1,5 +1,6 @@
 environment:
   development:
+    urlserver: 
     idsecret: gema/dev
   quality:
     urlserver: wngplgmaappwq00.itauchile.cl
