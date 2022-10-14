@@ -1,10 +1,16 @@
 environment:
   development:
-    urlserver: wngplgmaappwd00.itauchile.cl
-    idsecret: gema/dev
+    serverurl: wngplgmaappwd00.itauchile.cl
+    secretid: gema/dev
+    appsettings: debug
+    tmpfolder: E:/Jenkins/tmp
   quality:
-    urlserver: wngplgmaappwq00.itauchile.cl
-    idsecret: gema/qa
+    serverurl: wngplgmaappwq00.itauchile.cl
+    secretid: gema/qa
+    appsettings: qa
+    tmpfolder: E:/Jenkins/tmp
   production:
-    urlserver: wngplgmaappwp00.itauchile.cl
-    idsecret: gema/prod
+    serverurl: wngplgmaappwp00.itauchile.cl
+    secretid: gema/production
+    appsettings: release
+    tmpfolder: E:/Jenkins/tmp
