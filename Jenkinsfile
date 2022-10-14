@@ -51,9 +51,9 @@ pipeline {
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
-                    mkdir my_folder
-                    file="/var/jenkins_home/workspace/readYaml/my_folder";
-                    #file="/GEMA_NUBE";
+                    #mkdir my_folder
+                    #file="/var/jenkins_home/workspace/readYaml/my_folder";
+                    file="/GEMA_NUBE";
                     #if ! [ -e $file ]
                     #if ! [ "$(ls -A $file)" ]
                     if ! [ -e $file || "$(ls -A $file)"]
