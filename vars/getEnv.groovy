@@ -5,7 +5,7 @@ def call(Map config = [:]){
 
   def exists = fileExists envconfig
  
-  assert (exists): echo "\nErrores: No existe archivo de configuracion ${envconfig}"
+  assert (exists): "\nErrores: No existe archivo de configuracion ${envconfig}"
  
   if (exists) {
 
