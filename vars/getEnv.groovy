@@ -16,7 +16,7 @@ def exists = fileExists envconfig
    env.URL_SERVER = data.environment.${config.branchTarget}.urlserver
    env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
    env.APP_SETTINGS = data.environment."${config.branchTarget}".appsettings
-   env.TMP_FOLDER = data.environment."${config.branchTarget}".tmpfolder}
+   env.TMP_FOLDER = data.environment."${config.branchTarget}".tmpfolder
  
    println env.URL_SERVER
 
