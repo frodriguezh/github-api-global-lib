@@ -16,24 +16,24 @@ pipeline {
     stages {
         stage('Download Code') {
             steps {
-                echo "Clonar Codigo"
-                //helloWorldExternal(name: "Jenkinsfile33")
+                //echo "Clonar Codigo"
                 //getSourceCode(repoUrl,repoBranchTarget)
                 //getSourceCode(repoUrl,"develop")
+                git branch: 'main', url: 'https://github.com/frodriguezh/Prueba-Docker.git'
             }
         }
         stage('Test Code SonarQube') {
             when { expression { env.repoBranchTarget == 'development' && env.gitlabAction == 'crearmr' } }
             steps {
-               //echo "Test Code SonarQube"
-               sonarQubeTest()
+               echo "Test Code SonarQube"
+               //sonarQubeTest()
             }
         }
         stage('Get Env') {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                 echo "Get Env"
-                getEnv(branchTarget: env.repoBranchTarget)
+                //getEnv(branchTarget: env.repoBranchTarget)
             }
         }
         stage('Get Secrets') {
@@ -48,15 +48,15 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Construir APP"
-               //sh "dotnet restore"
-               //sh "dotnet publish -c ${env.APP_SETTINGS} -o /GEMA_NUBE --no-restore"
+               sh "dotnet restore"
+               sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
             }
         }
         stage('Package'){
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Generar Package" 
-               //sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
+               sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
                 
             }
             
@@ -64,7 +64,7 @@ pipeline {
         stage('Move Package'){
               when { 
                    expression { env.gitlabAction == 'merge' }
-                   expression { return fileExists ('Jenkinsfile') }
+                   //expression { return fileExists ('Jenkinsfile') }
              }
              steps {
                echo "Mover Zip"     
@@ -81,7 +81,8 @@ pipeline {
     }
      post { 
         always { 
-            cleanWs()
+            //cleanWs()
+            echo 'limpio'
         }
     }
 }
