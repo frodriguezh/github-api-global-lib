@@ -54,7 +54,7 @@ pipeline {
                     #mkdir my_folder
                     #file="/var/jenkins_home/workspace/readYaml/my_folder";
                     file="/GEMA_NUBE";
-                    if ! [ -e -s $file ] 
+                    if ! [ -es $file ] 
                     then 
                          exit 1
                     fi
