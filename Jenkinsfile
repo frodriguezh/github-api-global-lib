@@ -55,7 +55,8 @@ pipeline {
                     file="/var/jenkins_home/workspace/readYaml/my_folder";
                     #file="/GEMA_NUBE";
                     #if ! [ -e $file ]
-                    if ! [ "$(ls -A $file)" ]
+                    #if ! [ "$(ls -A $file)" ]
+                    if ! [ -e $file || "$(ls -A $file)"]
                     then 
                          exit 1
                     fi
