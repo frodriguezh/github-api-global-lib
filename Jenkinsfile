@@ -51,6 +51,7 @@ pipeline {
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
+                    ls -l
                     #mkdir my_folder
                     #file="/var/jenkins_home/workspace/readYaml/my_folder";
                     file="/GEMA_NUBE";
