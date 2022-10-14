@@ -53,7 +53,10 @@ pipeline {
             }
         }
         stage('Package'){
-            when { expression { env.gitlabAction == 'merge' } }
+            when { 
+                 expression { env.gitlabAction == 'merge' }
+                 expression { return fileExists ('/GEMA_NUBE') }
+            }
             steps {
                echo "Generar Package" 
                sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
