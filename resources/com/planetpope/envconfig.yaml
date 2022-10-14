@@ -1,6 +1,6 @@
 environment:
   development:
-    serverurl: wngplgmaappwd00.itauchile.cl
+    serverurl:
     secretid: gema/dev
     appsettings: debug
     tmpfolder: E:/Jenkins/tmp
