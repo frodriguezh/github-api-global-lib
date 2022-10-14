@@ -10,8 +10,8 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert (data?.environment."${config.branchTarget}".urlserver):"El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.urlserver"
-  assert (data?.environment."${config.branchTarget}".idsecret):"El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.idsecret"
+  assert (data?.environment."${config.branchTarget}".urlserver): "\nEl archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.urlserver"
+  assert (data?.environment."${config.branchTarget}".idsecret): "\nEl archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.idsecret"
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
