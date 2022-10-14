@@ -7,6 +7,11 @@ def exists = fileExists envconfig
   if (exists) {
 
    def data = readYaml file: envconfig
+   
+   String[] array = ["serverurl","secretid","appsettings","tmpfolder"]; 
+		   for(int i in array) { 
+      println(i); 
+   } 
 
    assert (data?.environment."${config.branchTarget}".serverurl): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.serverurl"
    assert (data?.environment."${config.branchTarget}".secretid): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.secretid"
