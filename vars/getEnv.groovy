@@ -10,8 +10,8 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert (data?.environment."${config.branchTarget}".urlserver): "\nEl archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.urlserver"
-  assert (data?.environment."${config.branchTarget}".idsecret): "\nEl archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.idsecret"
+  assert (data?.environment."${config.branchTarget}".urlserver): "\nError: El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.urlserver"
+  assert (data?.environment."${config.branchTarget}".idsecret): "\nError: El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.idsecret"
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
@@ -22,19 +22,17 @@ if (exists) {
  }
  else{
   
-  echo "El archivo de configuracion ${envconfig} no tiene ambientes declarados"
+  echo "\nError: El archivo de configuracion ${envconfig} no tiene ambientes declarados"
   sh 'exit 1;'
   
  }
  
 } else {
 
-  echo "No existe archivo de configuracion ${envconfig}"
+  echo "\nError: No existe archivo de configuracion ${envconfig}"
   sh 'exit 1;'
  
 }
 
-
- //assert env.URL_SERVER != "wngplgmaappwd00.itauchile.cl" : "**********************El DNS es igual a wngplgmaappwd00.itauchile.cl**********************"
  
 }
