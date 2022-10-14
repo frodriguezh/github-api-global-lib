@@ -10,7 +10,7 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert (data?.environment."${config.branchTarget}".urlserver):"Assertion failed, Got Null Response"
+  assert (data?.environment."${config.branchTarget}".idsecret):"Assertion failed, Got Null Response"
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
   
