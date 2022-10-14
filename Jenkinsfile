@@ -51,8 +51,8 @@ pipeline {
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
-                    file="/GEMA_NUBE";
-                    if [ -e $file ] 
+                    file="/GEMA_NUBEEE";
+                    !if [ -e $file ] 
                     then 
                          pwd
                          exit 1
