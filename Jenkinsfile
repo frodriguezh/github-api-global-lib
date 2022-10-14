@@ -52,8 +52,7 @@ pipeline {
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
                     mkdir my_folder
-                    file="$pwd/my_folder";
-                    echo $file
+                    file="/var/jenkins_home/workspace/readYaml/my_folder";
                     if ! [ -e $file ] 
                     then 
                          exit 1
