@@ -8,17 +8,17 @@ def exists = fileExists envconfig
 
    def data = readYaml file: envconfig
 
-   assert (data?.environment."${config.branchTarget}".urlserver): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.urlserver"
-   assert (data?.environment."${config.branchTarget}".idsecret): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.idsecret"
+   assert (data?.environment."${config.branchTarget}".serverurl): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.serverurl"
+   assert (data?.environment."${config.branchTarget}".secretid): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.secretid"
    assert (data?.environment."${config.branchTarget}".appsettings): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.appsettings"
    assert (data?.environment."${config.branchTarget}".tmpfolder): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.idsecret"
    
-   env.URL_SERVER = data.environment.${config.branchTarget}.urlserver
-   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
+   env.SERVER_URL = data.environment.${config.branchTarget}.serverurl
+   env.SECRET_ID = data.environment."${config.branchTarget}".secretid
    env.APP_SETTINGS = data.environment."${config.branchTarget}".appsettings
    env.TMP_FOLDER = data.environment."${config.branchTarget}".tmpfolder
  
-   println env.URL_SERVER
+   println env.SERVER_URL
 
   } else {
 
