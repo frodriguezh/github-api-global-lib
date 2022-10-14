@@ -13,7 +13,7 @@ def exists = fileExists envconfig
    assert (data?.environment."${config.branchTarget}".appsettings): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.appsettings"
    assert (data?.environment."${config.branchTarget}".tmpfolder): "\nErrores: El archivo de configuracion ${envconfig} no tiene valor en el tag data.environment.${config.branchTarget}.idsecret"
    
-   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
+   env.URL_SERVER = data.environment.${config.branchTarget}.urlserver
    env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
    env.APP_SETTINGS = data.environment."${config.branchTarget}".appsettings
    env.TMP_FOLDER = data.environment."${config.branchTarget}".tmpfolder
