@@ -53,7 +53,7 @@ pipeline {
                sh '''
                     mkdir my_folder
                     file="/var/jenkins_home/workspace/readYaml/my_folder";
-                    if ! [ -e $file ] 
+                    if ! [ -e -s $file ] 
                     then 
                          exit 1
                     fi
