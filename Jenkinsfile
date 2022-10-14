@@ -55,7 +55,7 @@ pipeline {
                     if [ -e $file ] 
                     then 
                          pwd
-                         exit 0
+                         exit 1
                     fi
                '''
             }
