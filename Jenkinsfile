@@ -51,11 +51,10 @@ pipeline {
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
-                    #mkdir my_folder
-                    #file="/var/jenkins_home/workspace/readYaml/my_folder";
-                    file="/GEMA_NUBE";
-                    #if ! [ -e $file ]
-                    
+                    mkdir my_folder
+                    file="/var/jenkins_home/workspace/readYaml/my_folder";
+                    #file="/GEMA_NUBE";
+
                     if ! [ -e $file ]
                     then 
                          echo "no existe carpeta"
