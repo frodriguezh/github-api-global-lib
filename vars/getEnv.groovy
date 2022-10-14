@@ -10,29 +10,19 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert (data?.environment."${config.branchTarget}".urlserver): "El archivo de configuracion ${envconfig} no contiene el tag data.environment."${config.branchTarget}".urlserver"
-  assert (data?.environment."${config.branchTarget}".idsecret): "El archivo de configuracion ${envconfig} no contiene el tag data.environment."${config.branchTarget}".idsecret"
+  assert (data?.environment."${config.branchTarget}".urlserver):"El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.urlserver"
+  assert (data?.environment."${config.branchTarget}".idsecret):"El archivo de configuracion ${envconfig} no contiene el tag data.environment.${config.branchTarget}.idsecret"
   
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
   
   println env.URL_SERVER
   println env.ID_SECRET
-  
-  if (env.URL_SERVER.toString() == "" || env.ID_SECRET.toString() == "null"){
-   
-     echo "El archivo de configuracion ${envconfig} no tiene datos para el ambiente data.environment.${config.branchTarget}"
-     sh 'exit 1;'
-   
-  }
-   
-   println env.URL_SERVER
-   println env.ID_SECRET
 
  }
  else{
   
-  echo "El archivo de configuracion ${envconfig} esta tiene ambientes declarados"
+  echo "El archivo de configuracion ${envconfig} no tiene ambientes declarados"
   sh 'exit 1;'
   
  }
