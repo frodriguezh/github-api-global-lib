@@ -10,12 +10,11 @@ if (exists) {
  
  if (data?.environment) {
   
-  assert (data?.environment."${config.branchTarget}".idsecret):"Assertion failed, Got Null Response"
+  assert (data?.environment."${config.branchTarget}".urlserver): "El archivo de configuracion ${envconfig} no contiene el tag data.environment."${config.branchTarget}".urlserver"
+  assert (data?.environment."${config.branchTarget}".idsecret): "El archivo de configuracion ${envconfig} no contiene el tag data.environment."${config.branchTarget}".idsecret"
+  
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
-  
-  //assert (env.URL_SERVER != null) && (env.URL_SERVER != "") && (env.URL_SERVER != []);
-  //assert (env.ID_SECRET != null) && (env.ID_SECRET != "") && (env.ID_SECRET != []);
   
   println env.URL_SERVER
   println env.ID_SECRET
