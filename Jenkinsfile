@@ -51,7 +51,8 @@ pipeline {
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
-                    file="/GEMA_NUBE";
+                    mkdir my_folder
+                    file="/my_folder";
                     if ! [ -e $file ] 
                     then 
                          exit 1
