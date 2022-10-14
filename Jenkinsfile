@@ -50,12 +50,15 @@ pipeline {
                echo "Construir APP"
                sh "dotnet restore"
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
+               sh '''
+                    file="/GEMA_NUBE";
+                    if [ -e $file ]; then echo "whew"; else echo "uh-oh"; fi
+               '''
             }
         }
         stage('Package'){
             when { 
                  expression { env.gitlabAction == 'merge' }
-                 expression { return fileExists ('/GEMA_NUBE') }
             }
             steps {
                echo "Generar Package" 
