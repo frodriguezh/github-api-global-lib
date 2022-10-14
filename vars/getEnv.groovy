@@ -13,7 +13,8 @@ if (exists) {
   env.URL_SERVER = data.environment."${config.branchTarget}".urlserver
   env.ID_SECRET = data.environment."${config.branchTarget}".idsecret
   
-  assert (env.URL_SERVER) == null : "nulo"
+  //assert (env.URL_SERVER) == null : "nulo"
+  assertNotNull(env.URL_SERVER)
   
   println env.URL_SERVER
   println env.ID_SECRET
