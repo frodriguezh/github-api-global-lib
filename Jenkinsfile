@@ -52,7 +52,7 @@ pipeline {
                sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
                sh '''
                     file="/GEMA_NUBE";
-                    if [ -e $file ]; then echo "whew"; else echo "uh-oh"; fi
+                    if [ -e $file ] then exit 0; fi
                '''
             }
         }
