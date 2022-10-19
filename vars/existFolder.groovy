@@ -7,15 +7,18 @@ def call(Map config = [:]){
      
    '''
  
-   String path= "/GEMA_NUBE33";    
-   File file = new File(path);
- 
-   if (!file.exists()) {
-        println "No existe!!!!!!!!!!!"
-        exit 1;
-    }
-   //def exists = fileExists "GEMA_NUBE"
+   //def exists = fileExists "/GEMA_NUBE"
 
    //assert (exists): "\nErrores: No existe archivo de configuracion"
+   def path = "GEMA_NUBE"
+ 
+   if (Files.exists(path)) {
+        if (Files.isDirectory(path)) {
+            println "SIIIIIIIIexiste carpeta"
+        } else{ 
+            println "NOOOOO existe carpeta"
+        }
+
+    }
   
 }
