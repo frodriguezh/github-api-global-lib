@@ -11,9 +11,8 @@ def call(Map config = [:]){
    File file = new File(path);
  
    if (!file.exists()) {
-        System.out.print("No Folder");
-        file.mkdir();
-        System.out.print("Folder created");
+        println "No existe!!!!!!!!!!!"
+        exit 1;
     }
    //def exists = fileExists "GEMA_NUBE"
 
