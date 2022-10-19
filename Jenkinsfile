@@ -47,10 +47,10 @@ pipeline {
         stage('Build') {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
-
-               //sh "dotnet restore"
-               //sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
-               existFolder(nameFolder: "/GEMA_NUBE33")
+               echo "Build"
+               sh "dotnet restore"
+               sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
+               existFolder(nameFolder: "/GEMA_NUBE")
             }
         }
         stage('Package'){
