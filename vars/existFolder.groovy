@@ -1,7 +1,14 @@
 def call(Map config = [:]){
  
-  def exists = fileExists config.nameFolder
+   sh '''
+   
+     dotnet restore
+     dotnet publish -c release -o /${config.nameFolder} --no-restore
+     
+   '''
+ 
+   //def exists = fileExists config.nameFolder
 
-  assert (exists): "\nErrores: No existe archivo de configuracion"
+   //assert (exists): "\nErrores: No existe archivo de configuracion"
   
 }
