@@ -48,7 +48,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Build"
-               existFolder()
+               existFolder(nameFolder: "GEMA_NUBE")
             }
         }
         stage('Package'){
