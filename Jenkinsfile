@@ -75,7 +75,7 @@ pipeline {
             }
             steps {
                echo "Generar Package" 
-               sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
+               //sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
                 
             }
             
