@@ -47,26 +47,10 @@ pipeline {
         stage('Build') {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
-               echo "Construir APP"
-               sh "dotnet restore"
-               sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
-               sh '''
-                    #mkdir my_folder
-                    #file="/var/jenkins_home/workspace/readYaml/my_folder";
-                    file="/GEMA_NUBE";
 
-                    if ! [ -e $file ]
-                    then 
-                         echo "no existe carpeta"
-                         exit 1
-                    fi
-                    
-                    if ! [ "$(ls -A $file)" ]
-                    then 
-                         echo "carpeta vacia"
-                         exit 1
-                    fi
-               '''
+               //sh "dotnet restore"
+               //sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
+               existFolder(nameFolder: "/GEMA_NUBE33")
             }
         }
         stage('Package'){
