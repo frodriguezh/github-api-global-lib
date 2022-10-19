@@ -6,7 +6,8 @@ def call(Map config = [:]){
      dotnet publish -c release -o /"'''+config.nameFolder+'''" --no-restore
      
    '''
-   String path="/GEMA_NUBE";    
+ 
+   String path= "/GEMA_NUBE33";    
    File file = new File(path);
  
    if (!file.exists()) {
