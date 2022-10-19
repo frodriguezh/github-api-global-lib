@@ -3,7 +3,7 @@ def call(Map config = [:]){
    sh '''
    
      dotnet restore
-     dotnet publish -c release -o /GEMA_NUBE --no-restore
+     dotnet publish -c release -o /"'''+config.nameFolder+'''" --no-restore
      
    '''
  
