@@ -6,9 +6,16 @@ def call(Map config = [:]){
      dotnet publish -c release -o /"'''+config.nameFolder+'''" --no-restore
      
    '''
+   String path="/GEMA_NUBE";    
+   File file = new File(path);
  
-   def exists = fileExists "GEMA_NUBE"
+   if (!file.exists()) {
+        System.out.print("No Folder");
+        file.mkdir();
+        System.out.print("Folder created");
+    }
+   //def exists = fileExists "GEMA_NUBE"
 
-   assert (exists): "\nErrores: No existe archivo de configuracion"
+   //assert (exists): "\nErrores: No existe archivo de configuracion"
   
 }
