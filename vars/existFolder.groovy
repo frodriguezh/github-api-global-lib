@@ -7,7 +7,7 @@ def call(Map config = [:]){
      
    '''
  
-   def exists = fileExists "/${config.nameFolder}"
+   def exists = fileExists "/GEMA_NUBE"
 
    assert (exists): "\nErrores: No existe archivo de configuracion"
   
