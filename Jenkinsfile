@@ -48,9 +48,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Build"
-               sh "dotnet restore"
-               sh "dotnet publish -c release -o /GEMA_NUBE --no-restore"
-               existFolder(nameFolder: "/GEMA_NUBE")
+               existFolder()
             }
         }
         stage('Package'){
@@ -59,7 +57,7 @@ pipeline {
             }
             steps {
                echo "Generar Package" 
-               //sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
+               sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
                 
             }
             
