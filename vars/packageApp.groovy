@@ -8,8 +8,8 @@ def call(Map config = [:]){
 
   def exists = fileExists "GEMA_NUBE_${BUILD_NUMBER}.zip"
 
-  assert (exists): "\nErrores: No existe el archivo de zip GEMA_NUBE_${BUILD_NUMBER}.zip"
+  assert (exists): "\nErrores: No existe el archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip"
  
-  println file.length().toString()
+  assert (file.size()): "\nErrores: El archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip tiene un peso igual a cero"
  
 }
