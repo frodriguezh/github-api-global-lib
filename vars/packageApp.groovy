@@ -11,6 +11,8 @@ def call(Map config = [:]){
 
   assert (exists): "\nErrores: No existe el archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip"
  
+  ZipFile zip_file = new ZipFile("/GEMA_NUBE_${BUILD_NUMBER}.zip");
+ 
   //assert (file.size()): "\nErrores: El archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip tiene un peso igual a cero"
  
 }
