@@ -38,7 +38,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Build"
-               buildApp(nameFolder: env.APP_FOLDER)
+               buildApp(appFolder: env.APP_FOLDER)
             }
         }
         stage('Package'){
