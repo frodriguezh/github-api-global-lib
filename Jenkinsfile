@@ -12,6 +12,14 @@ pipeline {
         docker { image 'netcorev6:latest'}
     }
     stages {
+        stage('Get Env') {
+            when { expression { env.gitlabAction == 'merge' } }
+            steps {
+                echo "Get Env"
+                echo "${env.repoBranchTarget}"
+                getEnv(branchTarget: env.repoBranchTarget)
+            }
+        }
         stage('Download Code') {
             steps {
                 //echo "Clonar Codigo"
@@ -25,22 +33,6 @@ pipeline {
             steps {
                echo "Test Code SonarQube"
                //sonarQubeTest()
-            }
-        }
-        stage('Get Env') {
-            when { expression { env.gitlabAction == 'merge' } }
-            steps {
-                echo "Get Env"
-                echo "${env.repoBranchTarget}"
-                getEnv(branchTarget: env.repoBranchTarget)
-            }
-        }
-        stage('Get Secrets') {
-            when { expression { env.gitlabAction == 'merge' } }
-            steps {
-                echo "Get Secrets"
-               //getSecretAws()
-          
             }
         }
         stage('Build') {
@@ -60,6 +52,14 @@ pipeline {
                 
             }
             
+        }
+        stage('Get Secrets') {
+            when { expression { env.gitlabAction == 'merge' } }
+            steps {
+                echo "Get Secrets"
+               //getSecretAws()
+          
+            }
         }
         stage('Move Package'){
               when { 
