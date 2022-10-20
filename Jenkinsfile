@@ -48,7 +48,7 @@ pipeline {
             steps {
                echo "Generar Package" 
                //sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /${env.APP_FOLDER}"
-               packageApp(nameFolder: env.APP_FOLDER)
+               packageApp(appFolder: env.APP_FOLDER)
                 
             }
             
