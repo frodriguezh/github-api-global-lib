@@ -3,7 +3,7 @@ def call(Map config = [:]){
  
   sh '''
 
-    zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /"'''+config.nameFolder+'''"
+    zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /"'''+config.appFolder+'''"
 
   '''
 
@@ -15,5 +15,4 @@ def call(Map config = [:]){
  
   assert (zipFile.size() > 1): "\nErrores: El archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip tiene un peso <= a 1MB"
  
-
 }
