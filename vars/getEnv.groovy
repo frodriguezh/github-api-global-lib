@@ -1,7 +1,7 @@
 def call(Map config = [:]){
  
   def envconfig = "resources/com/planetpope/envconfig.yaml"
-  String[] configvalues = ["serverurl", "secretid", "appsettings","appfolder","tmpfolder"]; 
+  String[] configvalues = ["serverurl","secretid","appsettings","appfolder","tmpfolder"]; 
 
   def exists = fileExists envconfig
 
