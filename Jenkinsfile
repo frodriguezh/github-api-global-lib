@@ -31,6 +31,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                 echo "Get Env"
+                echo "${env.repoBranchTarget}"
                 getEnv(branchTarget: env.repoBranchTarget)
             }
         }
