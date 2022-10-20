@@ -48,7 +48,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Build"
-               existFolder(nameFolder: "GEMA_NUBE")
+               existFolder(nameFolder: env.APP_FOLDER)
             }
         }
         stage('Package'){
@@ -57,7 +57,7 @@ pipeline {
             }
             steps {
                echo "Generar Package" 
-               sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /GEMA_NUBE"
+               sh "zip -r GEMA_NUBE_${BUILD_NUMBER}.zip /${env.APP_FOLDER}"
                 
             }
             
