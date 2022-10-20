@@ -5,17 +5,22 @@ def call(Map config = [:]){
      dotnet restore
      dotnet publish -c release -o /"'''+config.nameFolder+'''" --no-restore
      
+     if ! [ -e "'''+config.nameFolder+'''" ]
+     then 
+          echo "No existe carpeta"
+          exit 1
+     fi
+
+     if ! [ "$(ls -A "'''+config.nameFolder+'''")" ]
+     then 
+          echo "Carpeta vacia"
+          exit 1
+     fi
+     
    '''
  
    //def exists = fileExists "/GEMA_NUBE"
 
    //assert (exists): "\nErrores: No existe archivo de configuracion"
-   def folder = new File( 'GEMA_NUBE33/' )
-
-   if( !folder.exists() ) {
-     println "No existe"
-   }else{
-    println "Siiiiiiiiiiiiii existe"
-   }
   
 }
