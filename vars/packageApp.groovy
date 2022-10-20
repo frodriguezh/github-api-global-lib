@@ -13,6 +13,7 @@ def call(Map config = [:]){
  
   ZipFile zip_file = new ZipFile("${WORKSPACE}/GEMA_NUBE_${BUILD_NUMBER}.zip")
  
-  //assert (file.size()): "\nErrores: El archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip tiene un peso igual a cero"
-  println zip_file.size().toString()
+  assert (zip_file.size() == 0): "\nErrores: El archivo zip GEMA_NUBE_${BUILD_NUMBER}.zip tiene un peso igual a cero"
+ 
+  //println zip_file.size().toString()
 }
