@@ -1,7 +1,5 @@
 @Library("libreriacompartida") _
 
-env.error = false
-
 env.repoBranchTarget = 'development'
 //env.repoBranchTarget = 'quality'
 //env.repoBranchTarget = 'production'
