@@ -3,14 +3,17 @@ environment:
     serverurl: wngplgmaappwd00.itauchile.cl
     secretid: gema/dev
     appsettings: debug
+    appfolder: GEMA_NUBE
     tmpfolder: E:/Jenkins/tmp
   quality:
     serverurl: wngplgmaappwq00.itauchile.cl
     secretid: gema/qa
     appsettings: qa
+    appfolder: GEMA_NUBE
     tmpfolder: E:/Jenkins/tmp
   production:
     serverurl: wngplgmaappwp00.itauchile.cl
     secretid: gema/production
     appsettings: release
+    appfolder: GEMA_NUBE
     tmpfolder: E:/Jenkins/tmp
