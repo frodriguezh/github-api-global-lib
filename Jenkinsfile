@@ -16,7 +16,6 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                 echo "Get Env"
-                echo "${env.repoBranchTarget}"
                 getEnv(branchTarget: env.repoBranchTarget)
             }
         }
@@ -39,7 +38,7 @@ pipeline {
             when { expression { env.gitlabAction == 'merge' } }
             steps {
                echo "Build"
-               existFolder(nameFolder: env.APP_FOLDER)
+               buildApp(nameFolder: env.APP_FOLDER)
             }
         }
         stage('Package'){
